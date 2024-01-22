@@ -1,0 +1,31 @@
+/system        ext4     system                                      flags=display=system;logical
+/vendor        ext4     vendor                                      flags=display=vendor;logical
+/product       ext4     product                                     flags=display=product;logical
+
+/system        emmc     system                                      flags=display=system;logical;backup=1;backup=1;flashimg
+/vendor        emmc    vendor                                      flags=display=vendor;logical;backup=1;backup=1;flashimg
+/product       emmc     product                                     flags=display=product;logical;backup=1;flashimg
+
+/odm           ext4     odm                                         flags=display=odm;logical;backup=1;flashimg
+/boot          emmc     /dev/block/bootdevice/by-name/boot          flags=display=boot;backup=1;flashimg
+/recovery      emmc     /dev/block/bootdevice/by-name/recovery      flags=display=recovery;backup=1;flashimg
+/data          f2fs     /dev/block/bootdevice/by-name/userdata      flags=display=data
+/cache         ext4     /dev/block/bootdevice/by-name/cache         flags=display=cache
+/sdcard        vfat     /dev/block/mmcblk0p1                        flags=display=sdcard
+/efs           ext4     /dev/block/bootdevice/by-name/sec_efs       flags=display=efs
+/sec_efs       ext4     /dev/block/bootdevice/by-name/sec_efs       flags=display=sec_efs
+/carrier       ext4     /dev/block/bootdevice/by-name/carrier       flags=display=carrier
+/preload       ext4     /dev/block/bootdevice/by-name/hidden        flags=display=preload
+/modem         emmc     /dev/block/bootdevice/by-name/apnhlos       flags=display=modem;backup=1;flashimg
+/mdm           emmc     /dev/block/bootdevice/by-name/modem         flags=display=mdm
+/dsp           emmc     /dev/block/bootdevice/by-name/dsp           flags=display=dsp
+/misc          emmc     /dev/block/bootdevice/by-name/misc          flags=display=misc
+/keydata       ext4     /dev/block/bootdevice/by-name/keydata       flags=display=keydata
+/keyrefuge     ext4     /dev/block/bootdevice/by-name/keyrefuge     flags=display=keyrefuge
+/dtbo          emmc     /dev/block/bootdevice/by-name/dtbo          flags=display=dtbo;backup=1;flashimg
+/prism         ext4     /dev/block/bootdevice/by-name/prism         flags=display=prism;backup=1;flashimg
+/optics        ext4     /dev/block/bootdevice/by-name/optics        flags=display=optics;backup=1;flashimg
+
+# Removable storage
+/external_sd    vfat        /dev/block/mmcblk1p1    /dev/block/mmcblk1        flags=storage;wipeingui;removable
+/usb-otg    auto        /dev/block/sda1    /dev/block/sda                flags=display="USB-OTG";storage;wipeingui;removable
